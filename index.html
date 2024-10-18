@@ -3,26 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Code Preview</title>
-    <!-- Prism.js CSS for syntax highlighting -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
-      rel="stylesheet"
-    />
+    <title>Python Programs</title>
+    <link href="./src/styles/style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Python Code Preview</h1>
+    <h1 class="topic">Sanfoundry Python Programs</h1>
 
-    <!-- Code block where the Python code will be displayed -->
-    <pre><code class="language-python" id="pythonCode">
-# Python code will be loaded here
-    </code></pre>
+    <!-- A div container where the code previews will be loaded -->
+    <div id="filePreviews"></div>
 
-    <!-- Prism.js script for syntax highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
-
-    <!-- External JavaScript file -->
+    <!-- JavaScript to load and preview the Python files -->
     <script src="./src/scripts/script.js"></script>
   </body>
 </html>

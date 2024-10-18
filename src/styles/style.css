@@ -1,0 +1,23 @@
+/* Prism.js CSS for syntax highlighting */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400..700&display=swap");
+
+.topic {
+  font-family: "Noto Serif Oriya", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  padding: 10px;
+}
+pre {
+  background-color: #dfd7d7;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+}
