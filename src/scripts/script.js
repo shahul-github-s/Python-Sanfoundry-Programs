@@ -2,7 +2,7 @@
 const pythonFiles = [
   { path: "/src/SolvedPrograms/1.py", label: "1. Output: Hello, World!" },
   {
-    path: "../SolvedPrograms/2.1.py",
+    path: "/src/SolvedPrograms/2.1.py",
     label: "2. Take input from the user and convert it to an integer",
   },
   {
