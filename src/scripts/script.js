@@ -1,12 +1,12 @@
 // List of Python files to preview
 const pythonFiles = [
-  { path: "/src/SolvedPrograms/1.py", label: "1. Output: Hello, World!" },
+  { path: "./src/SolvedPrograms/1.py", label: "1. Output: Hello, World!" },
   {
-    path: "/src/SolvedPrograms/2.1.py",
+    path: "./src/SolvedPrograms/2.1.py",
     label: "2. Take input from the user and convert it to an integer",
   },
   {
-    path: "/src/SolvedPrograms/2.2.py",
+    path: "./src/SolvedPrograms/2.2.py",
     label: "3. Take input from the user and convert it to an integer",
   },
 ];
@@ -17,7 +17,7 @@ const filePreviewsContainer = document.getElementById("filePreviews");
 // Function to fetch and display the content of Python files
 async function fetchAndDisplayFile(fileObj) {
   try {
-    console.log(`Fetching file: ${fileObj.path}`);
+    console.log(`Attempting to fetch file: ${fileObj.path}`);
     const response = await fetch(fileObj.path);
 
     if (!response.ok) {
@@ -27,9 +27,12 @@ async function fetchAndDisplayFile(fileObj) {
     }
 
     const fileContent = await response.text();
+    console.log(`Successfully fetched file: ${fileObj.path}`);
 
     // Create a new section for each file preview
     const filePreview = document.createElement("div");
+    filePreview.classList.add("file-preview");
+
     const fileTitle = document.createElement("h3");
     fileTitle.textContent = fileObj.label;
 
@@ -54,7 +57,7 @@ async function fetchAndDisplayFile(fileObj) {
     // Apply syntax highlighting to the new content
     Prism.highlightAll();
   } catch (error) {
-    console.error("Error fetching Python file:", error);
+    console.error(`Error fetching Python file: ${fileObj.path}`, error);
   }
 }
 
