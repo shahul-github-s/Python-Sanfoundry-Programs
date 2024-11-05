@@ -1,23 +1,46 @@
-/* Prism.js CSS for syntax highlighting */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css");
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400..700&display=swap");
 
 .topic {
   font-family: "Noto Serif Oriya", serif;
-  font-optical-sizing: auto;
   font-weight: 700;
-  font-style: normal;
   text-align: center;
   padding: 10px;
 }
+
 pre {
-  background-color: #dfd7d7;
+  background-color: #2d2d2d !important; /* Force background color */
+  color: #f8f8f2 !important; /* Ensure text color is correct */
   padding: 15px;
   border-radius: 5px;
-  margin-bottom: 20px;
-}
-code {
-  font-family: "Courier New", Courier, monospace;
+  overflow-x: auto;
   font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 20px;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+}
+
+.file-preview h3 {
+  font-family: "Noto Serif Oriya", serif;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+/* Custom syntax colors */
+.token.comment {
+  color: #75715e;
+  font-style: italic;
+}
+.token.keyword {
+  color: #66d9ef;
+}
+.token.string {
+  color: #a6e22e;
+}
+.token.function {
+  color: #e6db74;
+}
+.token.operator,
+.token.punctuation {
+  color: #f8f8f2;
 }

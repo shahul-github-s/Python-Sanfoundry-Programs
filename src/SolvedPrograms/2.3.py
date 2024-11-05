@@ -1,5 +1,5 @@
 def is_odd(n):
-    # Base case: If the number is less than 2, check if it's 0 (even)
+    # Base case: If the number is less than 2
     if (n < 2):
         return n
     
@@ -13,4 +13,4 @@ num = int(input("Enter number:"))
 if is_odd(num) :
     print(num,"is Odd!")
 else:
-    print(num," is odd!")
+    print(num," is Even!")

@@ -1,16 +1,25 @@
 // List of Python files to preview
 const pythonFiles = [
-  {
-    path: "./src/SolvedPrograms/1.py",
-    label: "1. Output: Hello, World!",
-  },
+  { path: "./src/SolvedPrograms/1.py", label: "1. Output: Hello, World!" },
   {
     path: "./src/SolvedPrograms/2.1.py",
-    label: "2. Take input from the user and convert it to an integer",
+    label: "2. Check Even or Odd in Python using if-else and Modulus Operator",
   },
   {
     path: "./src/SolvedPrograms/2.2.py",
-    label: "3. Take input from the user and convert it to an integer",
+    label: "3. Check Even or Odd in Python using Bitwise Operator",
+  },
+  {
+    path: "./src/SolvedPrograms/2.3.py",
+    label: "4. Check Even or Odd in Python using Recursion",
+  },
+  {
+    path: "./src/SolvedPrograms/2.4.py",
+    label: "5. Check Even or Odd in Python using Lambda Function",
+  },
+  {
+    path: "./src/SolvedPrograms/3.py",
+    label: "6. Check whether a number is positive or negative",
   },
 ];
 
@@ -20,9 +29,7 @@ const filePreviewsContainer = document.getElementById("filePreviews");
 // Function to fetch and display the content of Python files
 async function fetchAndDisplayFile(fileObj) {
   try {
-    console.log(`Attempting to fetch file: ${fileObj.path}`);
     const response = await fetch(fileObj.path);
-
     if (!response.ok) {
       throw new Error(
         `Failed to load ${fileObj.path} (status: ${response.status})`
@@ -30,7 +37,6 @@ async function fetchAndDisplayFile(fileObj) {
     }
 
     const fileContent = await response.text();
-    console.log(`Successfully fetched file: ${fileObj.path}`);
 
     // Create a new section for each file preview
     const filePreview = document.createElement("div");
@@ -38,12 +44,6 @@ async function fetchAndDisplayFile(fileObj) {
 
     const fileTitle = document.createElement("h3");
     fileTitle.textContent = fileObj.label;
-
-    // Apply custom styling to the heading
-    fileTitle.style.fontFamily = '"Noto Serif Oriya", serif';
-    fileTitle.style.fontWeight = "700";
-    fileTitle.style.fontStyle = "normal";
-
     filePreview.appendChild(fileTitle);
 
     // Create a <pre><code> block for displaying the code
@@ -54,12 +54,16 @@ async function fetchAndDisplayFile(fileObj) {
 
     codeBlock.appendChild(codeElement);
     filePreview.appendChild(codeBlock);
-
     filePreviewsContainer.appendChild(filePreview);
 
-    // Apply syntax highlighting to the new content
-    Prism.highlightAll();
+    // Apply syntax highlighting to the specific code block
+    Prism.highlightElement(codeElement);
   } catch (error) {
+    // Display error message
+    const errorMessage = document.createElement("p");
+    errorMessage.style.color = "red";
+    errorMessage.textContent = `Error loading file: ${fileObj.label}`;
+    filePreviewsContainer.appendChild(errorMessage);
     console.error(`Error fetching Python file: ${fileObj.path}`, error);
   }
 }
