@@ -21,6 +21,10 @@ const pythonFiles = [
     path: "./src/SolvedPrograms/3.py",
     label: "6. Check whether a number is positive or negative",
   },
+  {
+    path: "./src/SolvedPrograms/4.py",
+    label: "7. Print odd numbers within a given range",
+  },
 ];
 
 // Get the container to display code previews
