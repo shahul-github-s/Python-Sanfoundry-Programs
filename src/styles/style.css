@@ -9,6 +9,7 @@
 }
 
 pre {
+  /* margin-top: 0 !important; */
   background-color: #2d2d2d !important; /* Force background color */
   color: #f8f8f2 !important; /* Ensure text color is correct */
   padding: 15px;
@@ -21,9 +22,9 @@ pre {
 }
 
 .file-preview h3 {
-  font-family: "Noto Serif Oriya", serif;
-  font-weight: 700;
-  margin-top: 0;
+  font-family: "Noto Serif Oriya", serif !important;
+  font-weight: 700 !important;
+  /* margin-top: 0 !important; */
 }
 
 /* Custom syntax colors */
